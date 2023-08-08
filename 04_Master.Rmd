@@ -32,7 +32,7 @@ plot.NDVI(dat)
 
 Q1: This plot suggests that Fynbos greenness (NDVI) as observed from satellite saturates with time since fire. Why do you think it saturates rather than increasing linearly with time?
 
->*Answer 1:*
+>*Answer 1:* Fynbos greeness regrows postfire (causing the increasing curve directly postfire) until reaching the carrying capacity of the landscape to which the species then flunctuates around the environmental carrying capacity.  
 
 <br>
 
@@ -100,6 +100,7 @@ Lots more parameters...
 Q2: How do the estimates for the common parameters compare?
 
 >*Answer 2:*
+The alpha and lambda variable obtained a smaller estimate after fitting to the full model comparing it to the exponential model. The gamma variable has a stronger correlation i.e. larger estimate under the full model. Therefore, we conclude that the full model generally provides a better fit of the variables (alpha, lambda, gamma) to the data due to lower standard error and probability, but not necessarily an indication of a stronger relationship between the indicator and response variables. 
 
 <br>
 
@@ -117,11 +118,11 @@ anova(fit_negexp, fit_negexpS)
 
 Q3: Which model is better?
 
->*Answer 3:*
+>*Answer 3:* Model 2 is better. The degree of freedom of 2 indicates that model 2 has 2 additional parameters. The very small p-value (<0.001) suggests that the addition of the 2 independent variables leads to a significant improvement of model fit over the model 1. 
 
 Q4: How many degrees of freedom are there in this ANOVA and why (i.e. what are they)?
 
->*Answer 4:*
+>*Answer 4:* The degrees of freedom of this ANOVA is 2 representing the two models involved in the ANOVA comparison above. 
 
 <br>
 
@@ -214,7 +215,7 @@ AIC_simple - AIC_full
 
 Q5: Is there a preferred model and if so, which one?
 
->*Answer 5:*
+>*Answer 5:* The full model is the preferreed model of the two as it has a much lower AIC value than that of the simple model. 
 
 <br>
 
@@ -232,6 +233,6 @@ You'll notice that these are completely different to the AICs for the MLE models
 
 Q6: Why is it not okay to compare the AIC of these NLS models with the AIC of the MLE models? Hint: type `?AIC` into the R console and do some reading.
 
->*Answer 6:*
+>*Answer 6:* AIC can be computed for non-maximum likelihood models. However, the theory of AIC requires maximized log-likelihood. Therefore, these AIC values should not be compared. 
 
 <br>
